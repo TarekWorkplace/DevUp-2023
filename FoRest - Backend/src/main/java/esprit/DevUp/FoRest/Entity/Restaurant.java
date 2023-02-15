@@ -19,4 +19,7 @@ public class Restaurant implements Serializable {
     private String nameRestaurant ;
     private  String addressRestaurant;
     private int nbrmaximal;
+    @ManyToOne
+    Restaurant restaurant;
+
 }

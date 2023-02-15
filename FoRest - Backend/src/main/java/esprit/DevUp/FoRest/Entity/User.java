@@ -17,4 +17,6 @@ public class User  {
     @Column(name = "id_user", nullable = false)
     private Integer idUser;
 
+    @ManyToOne
+    accessRestaurant accessRestaurant;
 }

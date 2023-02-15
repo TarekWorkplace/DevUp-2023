@@ -1,6 +1,8 @@
 package esprit.DevUp.FoRest.Entity;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.*;
 import javax.persistence.*;
 
@@ -9,14 +11,25 @@ import javax.persistence.*;
 @ToString
 @RequiredArgsConstructor
 @Entity
-
-public class User  {
+@Table(name="Users")
+public class User implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_user", nullable = false)
+    @Column(name = "userid", nullable = false)
     private Integer idUser;
-    private String name;
+    private String firstname;
+    private String Lastname;
+    private String Email;
+    private String Password;
+    private int phone_number;
+    private String gender;
+    private int CIN;
+
+    private Date DateNaissance;
+    @Enumerated(EnumType.STRING)
+    private TypeUser typeUser;
+
 
 
     @ManyToOne

@@ -10,6 +10,7 @@ public class FoRestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FoRestApplication.class, args);
+		System.out.println("test git ");
 	}
 
 }

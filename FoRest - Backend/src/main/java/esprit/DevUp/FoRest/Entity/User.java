@@ -16,5 +16,7 @@ public class User  {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user", nullable = false)
     private Integer idUser;
+    private String name;
+
 
 }

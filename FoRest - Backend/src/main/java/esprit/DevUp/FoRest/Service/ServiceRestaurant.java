@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class ServiceRestaurant implements IServiceRestaurant {
+
     RestaurantRepository restaurantRepository;
     @Override
     public List<Restaurant> retrieveAllRestaurants() {

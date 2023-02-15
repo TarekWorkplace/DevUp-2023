@@ -1,5 +1,6 @@
 package esprit.DevUp.FoRest.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,5 +23,9 @@ public class OffreRestaurant implements Serializable  {
     private Integer nbrDays;
     @Enumerated(EnumType.STRING)
     private TypeOffre typeOffre;
+
+    @ManyToOne
+    @JsonIgnore
+    Restaurant restaurant;
 
 }

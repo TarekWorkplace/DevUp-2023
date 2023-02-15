@@ -1,9 +1,11 @@
 package esprit.DevUp.FoRest.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -21,5 +23,15 @@ public class Restaurant implements Serializable {
     private int nbrmaximal;
     @ManyToOne
     Restaurant restaurant;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="restaurant")
+    @JsonIgnore
+    private Set<OffreRestaurant> offreRestaurants;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="_Restaurant")
+    @JsonIgnore
+    private Set<ReservationPlace> reservationPlaces;
+
+
 
 }

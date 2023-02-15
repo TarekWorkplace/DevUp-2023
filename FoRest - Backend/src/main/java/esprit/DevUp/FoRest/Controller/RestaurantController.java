@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/Restaurant")
 public class RestaurantController {
+
     IServiceRestaurant serviceRestaurant;
 
     @GetMapping("/retrieveAllUsers")

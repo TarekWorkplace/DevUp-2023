@@ -1,10 +1,12 @@
 package esprit.DevUp.FoRest.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,4 +22,8 @@ public class Menu implements Serializable {
     private String plateName;
     private String Description;
     private Date timeMeal;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="menu")
+    @JsonIgnore
+    private Set<ReservationPlace> reservationPlaces;
+
 }

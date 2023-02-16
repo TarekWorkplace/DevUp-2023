@@ -3,14 +3,16 @@ package esprit.DevUp.FoRest.Service;
 import esprit.DevUp.FoRest.Entity.User;
 import esprit.DevUp.FoRest.Repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class ServiceImp implements ISevice{
+public class ServiceUser implements ISeviceUser {
 
+    // rayen added @Autowired
     UserRepository userRepository;
     @Override
     public List<User> retrieveAllUsers() {

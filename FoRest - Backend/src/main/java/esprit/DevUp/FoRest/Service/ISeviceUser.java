@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface ISevice {
+public interface ISeviceUser {
     List<User> retrieveAllUsers();
 
     User addUser (User u);

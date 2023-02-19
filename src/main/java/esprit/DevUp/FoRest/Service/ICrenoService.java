@@ -1,16 +1,16 @@
 package esprit.DevUp.FoRest.Service;
 
-import esprit.DevUp.FoRest.Entity.Event;
+import esprit.DevUp.FoRest.Entity.Creno;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IEventService {
+public interface ICrenoService {
 
     //    List<Universite> retrieveAllUniversites();
-    Event addEvent(Event e); // ajouter l’équipe avec son détail
-    List<Event> getAllEvents();
-    Optional<Event> getEvent(int id);
+    Creno addCreno(Creno e); // ajouter l’équipe avec son détail
+    List<Creno> getAllCrenos();
+    Optional<Creno> getCreno(int id);
 //    Universite updateUniversite (Universite e);
 //    Universite retrieveUniversite (Integer idUniversite);
 //    void assignUniversiteToDepartement(Integer IdUniversite, Integer IdDepartement);

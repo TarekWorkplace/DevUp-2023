@@ -1,6 +1,7 @@
 package esprit.DevUp.FoRest.Entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,5 +27,11 @@ public class Plannification implements Serializable {
     @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime endDate;
     private Integer occurrence;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+   // @JoinColumn(name = "idCreno", nullable = false)
+    @JsonIgnore
+    private Creno creno;
+
 
 }

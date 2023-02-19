@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -25,9 +26,13 @@ public class Creno implements Serializable {
     Date dateFin;
     int Occurence;
 
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idEvent", nullable = false)
     @JsonIgnore
     private Event event;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="creno")
+    private List<Plannification> plannifications ;
 
 }

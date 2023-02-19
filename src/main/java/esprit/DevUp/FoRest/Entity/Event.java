@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -23,9 +25,11 @@ public class Event implements Serializable {
     @Enumerated(EnumType.STRING)
     public state state;
     public String description;
-    //
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy ="invite")
-//    private Set<invite> invites;
+//
+//    @ManyToOne
+//    private Creno creno;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="event")
+    private List<Creno> creno;
 
 
 }

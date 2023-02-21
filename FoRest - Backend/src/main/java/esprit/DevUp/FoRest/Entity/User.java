@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class User implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid", nullable = false)
     private Integer idUser;
     private String firstname;
@@ -29,7 +29,6 @@ public class User implements Serializable{
     private Date DateNaissance;
     @Enumerated(EnumType.STRING)
     private TypeUser typeUser;
-
 
 
     @ManyToOne

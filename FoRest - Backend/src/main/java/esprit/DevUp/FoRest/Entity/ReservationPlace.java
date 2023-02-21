@@ -1,9 +1,7 @@
 package esprit.DevUp.FoRest.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,10 +11,11 @@ import java.util.Set;
 @Setter
 @Entity
 @ToString
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReservationPlace implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reservation_place", nullable = false)
     private Integer idReservationPlace;
     @ManyToOne

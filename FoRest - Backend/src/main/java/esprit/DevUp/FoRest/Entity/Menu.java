@@ -11,12 +11,12 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Menu implements Serializable {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_menu", nullable = false)
     private Integer idMenu;
     private String plateName;
@@ -25,5 +25,4 @@ public class Menu implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy="menu")
     @JsonIgnore
     private Set<ReservationPlace> reservationPlaces;
-
 }

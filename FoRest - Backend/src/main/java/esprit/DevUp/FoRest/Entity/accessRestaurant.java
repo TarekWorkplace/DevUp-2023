@@ -1,14 +1,8 @@
 package esprit.DevUp.FoRest.Entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,19 +11,22 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class accessRestaurant implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_access_restaurant", nullable = false)
+    private Integer id_access_restaurant;
 
-private Date dateStart;
-private Date dateEnd;
-private Boolean payment;
+    private Date dateStart;
+    private Date dateEnd;
+    private Boolean payment;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="accessRestaurant")
     private Set<User> users;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="restaurant")
     private Set<Restaurant> restaurants;
-    @Id
-    private Integer idaccess;
 
 }

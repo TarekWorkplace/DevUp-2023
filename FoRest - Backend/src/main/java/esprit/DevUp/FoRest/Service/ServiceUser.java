@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
+
 public class ServiceUser implements ISeviceUser {
 
-    // rayen added @Autowired
+    @Autowired
     UserRepository userRepository;
     @Override
     public List<User> retrieveAllUsers() {

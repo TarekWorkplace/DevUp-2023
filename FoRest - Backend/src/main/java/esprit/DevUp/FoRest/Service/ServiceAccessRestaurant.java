@@ -4,14 +4,14 @@ import esprit.DevUp.FoRest.Entity.accessRestaurant;
 import esprit.DevUp.FoRest.Repository.AccessRestaurantRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
-public class ServiceAccessRestaurant implements IServiceAccessRestaurant {
 
+public class ServiceAccessRestaurant implements IServiceAccessRestaurant {
+    @Autowired
     AccessRestaurantRepository restaurantRepository;
 
     @Override

@@ -4,14 +4,18 @@ import esprit.DevUp.FoRest.Entity.OffreRestaurant;
 import esprit.DevUp.FoRest.Entity.ReservationPlace;
 import esprit.DevUp.FoRest.Service.IServiceReservationPlace;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
 @RequestMapping("/ReservatonPlace")
 public class ReservationPlaceController {
+    @Autowired
     IServiceReservationPlace iServiceReservationPlace;
     @GetMapping("/retrieveAllReservationPlace")
     public List<ReservationPlace> getReservationPlace() {

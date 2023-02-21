@@ -3,14 +3,18 @@ package esprit.DevUp.FoRest.Controller;
 import esprit.DevUp.FoRest.Entity.TableRestaurant;
 import esprit.DevUp.FoRest.Service.IServiceTableRestaurant;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
 @RequestMapping("/Table")
 public class TableController {
+    @Autowired
     IServiceTableRestaurant iServiceTableRestaurant;
 
     @GetMapping("/retrieveAlltableRestaurant")

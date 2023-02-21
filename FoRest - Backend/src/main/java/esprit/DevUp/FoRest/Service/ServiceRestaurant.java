@@ -5,15 +5,15 @@ import esprit.DevUp.FoRest.Repository.RestaurantRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
 @Slf4j
 public class ServiceRestaurant implements IServiceRestaurant {
 
+    @Autowired
     RestaurantRepository restaurantRepository;
     @Override
     public List<Restaurant> retrieveAllRestaurants() {

@@ -4,14 +4,17 @@ import esprit.DevUp.FoRest.Entity.ReservationPlace;
 import esprit.DevUp.FoRest.Repository.ReservationPlaceRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
+@Slf4j
+
 public class ServiceReservationPlace implements IServiceReservationPlace {
 
+    @Autowired
 ReservationPlaceRepository reservationPlaceRepository;
     @Override
     public List<ReservationPlace> retrieveAllReservationPlace() {

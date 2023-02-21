@@ -4,13 +4,14 @@ import esprit.DevUp.FoRest.Entity.Menu;
 import esprit.DevUp.FoRest.Repository.MenuRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ServiceMenu implements IServiceMenu {
+    @Autowired
     MenuRepository menuRepository;
     @Override
     public List<Menu> retrieveAllMenu() {

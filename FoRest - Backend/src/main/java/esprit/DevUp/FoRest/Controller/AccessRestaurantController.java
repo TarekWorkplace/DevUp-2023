@@ -4,15 +4,18 @@ import esprit.DevUp.FoRest.Entity.Menu;
 import esprit.DevUp.FoRest.Entity.accessRestaurant;
 import esprit.DevUp.FoRest.Service.IServiceAccessRestaurant;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
 @RequestMapping("/accessRestaurant")
 public class AccessRestaurantController {
-
+    @Autowired
     IServiceAccessRestaurant serviceAccessRestaurant;
     @GetMapping("/retrieveAllaccessRestaurant")
     public List<accessRestaurant> getaccessRestaurant() {

@@ -13,11 +13,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="Users")
 public class User implements Serializable{
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userid", nullable = false)
-    private Integer idUser;
+    @Column(name = "id_user", nullable = false)
+    private Integer id_user;
     private String firstname;
     private String Lastname;
     private String Email;

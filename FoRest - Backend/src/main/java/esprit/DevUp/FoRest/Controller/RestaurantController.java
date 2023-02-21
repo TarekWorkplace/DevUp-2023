@@ -5,18 +5,22 @@ import esprit.DevUp.FoRest.Entity.User;
 import esprit.DevUp.FoRest.Repository.RestaurantRepository;
 import esprit.DevUp.FoRest.Service.IServiceRestaurant;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@NoArgsConstructor
 @RequestMapping("/Restaurant")
 public class RestaurantController {
 
+    @Autowired
     IServiceRestaurant serviceRestaurant;
 
-    @GetMapping("/retrieveAllUsers")
+    @GetMapping("/retrieveAllRestaurant")
     public List<Restaurant> getRestaurants() {
         List<Restaurant> list = serviceRestaurant.retrieveAllRestaurants();
         return list;

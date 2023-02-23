@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -21,10 +22,13 @@ public class Comment {
     private String content;
     private Integer upvotes;
     private Integer downvote;
+    private Date CommentedAt;
 
 
     @ManyToOne
     Post parentpost;
+    @ManyToOne
+    Comment Replyof;
 
     @ManyToOne
     User owner;

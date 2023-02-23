@@ -12,9 +12,12 @@ import javax.persistence.*;
 @ToString
 @RequiredArgsConstructor
 @Entity
-public class Reply {
-    @Id
+public class Reply extends Comment {
+    /*@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "replyid", nullable = false)
-    private Integer idReply;
+    private Integer idReply;*/
+    @ManyToOne
+    Comment parentComment;
+
 }

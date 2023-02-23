@@ -32,6 +32,6 @@ public class User implements Serializable{
 
 
 
-    @ManyToOne
-    accessRestaurant accessRestaurant;
+    /*@ManyToOne
+    accessRestaurant accessRestaurant;*/
 }

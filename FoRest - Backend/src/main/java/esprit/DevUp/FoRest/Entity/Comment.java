@@ -1,9 +1,7 @@
 package esprit.DevUp.FoRest.Entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,23 +10,40 @@ import java.util.Date;
 @Setter
 @ToString
 @RequiredArgsConstructor
+
 @Entity
 @Table(name="Comment")
 public class Comment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "commentid", nullable = false)
     private Integer idComment;
+    @Column
     private String content;
+    @Column
     private Integer upvotes;
+    @Column
     private Integer downvote;
-    private Date CommentedAt;
+    @Column
+    @Nullable
+    private Date CommentedAt=new Date();
 
 
-    @ManyToOne
-    Post parentpost;
-    @ManyToOne
-    Comment Replyof;
+   // @ManyToOne(fetch = FetchType.LAZY)
+   @ManyToOne(fetch = FetchType.EAGER,targetEntity = Post.class)
+   @JoinColumn(name = "parentpost_postid")
+
+   Post parentpost;
+
+    public Post getParentpost() {
+        return parentpost;
+    }
+
+    public void setParentpost(Post parentpost) {
+        this.parentpost = parentpost;
+    }
+    //  @ManyToOne
+   // Comment Replyof;
 
     @ManyToOne
     User owner;

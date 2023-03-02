@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -25,16 +26,27 @@ public class Post {
        // private String tags;
         private Integer upvotes;
         private Integer downvote;
-        //private Integer nbFlaged;
-        //private PostStatus postStatus;
-       // private Date CreatedAt;
+        private Integer nbFlaged=0;
+        private PostStatus postStatus=PostStatus.Open;
+        private Date CreatedAt=new Date();
 
-        @ManyToOne
+
+        @ManyToOne(fetch = FetchType.EAGER)
          User owner;
-        @OneToMany
-        List<Comment> comments = new ArrayList<Comment>();
+       /* @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+        List<Comment> comment ;//= new ArrayList<Comment>();
 
+        public Collection<Comment> getComment() {
+                return comment;
+        }
 
+        public void setComment(Collection<Comment> comment) {
+                this.comment = (List<Comment>) comment;
+        }*/
+
+        public Integer getscore() {
+                return upvotes-downvote;
+        }
 }
 
 
